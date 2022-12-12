@@ -1,0 +1,14 @@
+version: "3.3"
+services:
+  jenkins:
+    container_name: jen
+    image: jenkins/jenkins
+    ports:
+      - "8080:8080"
+    volumes:
+      - "$PWD/jenkins_home:/var/jenkins_home"
+    networks:
+      - net
+networks:
+  net:
+#CREATE DOCKER-COMPOSE FILE WITHOUT SUDO COMMAND WHEN YOUR USING ROOT ACCOUNT (EX:vi docker-compose.yml)
